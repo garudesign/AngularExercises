@@ -1,0 +1,22 @@
+/*------------------------------------
+    #WRAPPER
+------------------------------------*/
+
+@if $wefront__wrapper-fluid == true{
+
+	.wrapper-fluid{
+		min-width: rem($wefront__width-wrapper);
+		margin: 0 auto;
+		padding: 0 rem($wefront__base-spacing/2);
+	}
+}
+@else{
+	.wrapper{
+		width: rem($wefront__width-wrapper);
+		margin: 0 auto;
+		padding: 0 rem($wefront__base-spacing/2);
+	}
+}
+
+
+

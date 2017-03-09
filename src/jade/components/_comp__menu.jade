@@ -1,0 +1,219 @@
+mixin menu()
+	.SIC-menu.fc-megamenu(data-ng-click="head.closeMenu($event)", data-ng-class="{'SIC-menu--show': head.menuOpen === true}")
+		.SIC-menu__content(data-ng-click="head.stopPro($event)")
+			.SIC-menu__sidebar
+				.SIC-menu__header
+					.SIC-menu__header-left
+						h3.SIC-menu__title ATENCIÓN AL CLIENTE
+					div(class="SIC-menu__header-right")
+						button.SIC-btn-icon.SIC-btn-icon--cross.SIC-btn-icon--nomar(data-ng-click="head.closeMenu()")
+							span.SIC-menu__close-menu Cerrar menu
+				ul.SIC-menu__vnavigation.fc-menu-first-level
+					li
+						a(href='#') Cambio PS
+					li.SIC-menu__dropdown-submenu(data-ng-click="head.clicked($event)")
+						a(tabindex='-1', href='#') Atención clientes
+						.SIC-menu__dropdown-menu.fc-dropdown-menu(data-ng-click="head.stopPro($event)")
+							.SIC-menu__header
+								.SIC-menu__header-left
+									h3.SIC-menu__title COBRO
+							ul.fc-menu-second-level
+								li
+									a(tabindex='-1', href='#') Deuda contrato
+								li.SIC-menu__dropdown-submenu(data-ng-click="head.clicked($event)")
+									a(href='#') APL & Products
+									.SIC-menu__dropdown-menu.fc-dropdown-menu.parent(data-ng-click="head.stopPro($event)")
+										.SIC-menu__header
+											.SIC-menu__header-left
+												h3.SIC-menu__title DEUDA CLIENTE
+										ul.SIC-menu__third-level
+											li
+												uib-accordion(close-others='oneAtATime')
+													.SIC-menu__accordion.panel-default(uib-accordion-group='', heading='Cliente', is-open='status.isFirstOpen', is-disabled='status.isFirstDisabled')
+														a(href="#").SIC-menu__subaccordion Lorem ipsum dolor sit amet
+														a(href="#").SIC-menu__subaccordion Consectetur adipiscing elit
+											li
+												uib-accordion(close-others='oneAtATime')
+													.SIC-menu__accordion.panel-default(uib-accordion-group='', heading='Multisede, initially expanded', is-open='status.isFirstOpen', is-disabled='status.isFirstDisabled')
+														a(href="#").SIC-menu__subaccordion Lorem ipsum dolor sit amet
+														a(href="#").SIC-menu__subaccordion Consectetur adipiscing elit
+								li.SIC-menu__dropdown-submenu(data-ng-click="head.clicked($event)")
+									a(href='#') Deuda agrupación multiservicio
+									.SIC-menu__dropdown-menu.fc-dropdown-menu.parent(data-ng-click="head.stopPro($event)")
+										.SIC-menu__header
+											.SIC-menu__header-left
+												h3.SIC-menu__title DEUDA CLIENTE
+										ul
+											li
+												uib-accordion(close-others='oneAtATime')
+													.SIC-menu__accordion.panel-default(uib-accordion-group='', heading='Cliente', is-open='status.isFirstOpen', is-disabled='status.isFirstDisabled')
+														a(href="#").SIC-menu__subaccordion Lorem ipsum dolor sit amet
+														a(href="#").SIC-menu__subaccordion Consectetur adipiscing elit
+								li.SIC-menu__dropdown-submenu(data-ng-click="head.clicked($event)")
+									a(href='#') Información multiservicio
+									.SIC-menu__dropdown-menu.fc-dropdown-menu.parent(data-ng-click="head.stopPro($event)")
+										.SIC-menu__header
+											.SIC-menu__header-left
+												h3.SIC-menu__title DEUDA CLIENTE
+										ul
+											li
+												uib-accordion(close-others='oneAtATime')
+													.SIC-menu__accordion.panel-default(uib-accordion-group='', heading='Cliente', is-open='status.isFirstOpen', is-disabled='status.isFirstDisabled')
+														a(href="#").SIC-menu__subaccordion Lorem ipsum dolor sit amet
+														a(href="#").SIC-menu__subaccordion Consectetur adipiscing elit
+								li
+									a(href='#') Histórico gestión Contto/Expdte.Fact
+								li.SIC-menu__dropdown-submenu(data-ng-click="head.clicked($event)")
+									a(href='#') Histórico gestiones remesas multisrv.
+									.SIC-menu__dropdown-menu.fc-dropdown-menu.parent(data-ng-click="head.stopPro($event)")
+										.SIC-menu__header
+											.SIC-menu__header-left
+												h3.SIC-menu__title DEUDA CLIENTE
+										ul
+											li
+												uib-accordion(close-others='oneAtATime')
+													.SIC-menu__accordion.panel-default(uib-accordion-group='', heading='Cliente', is-open='status.isFirstOpen', is-disabled='status.isFirstDisabled')
+														a(href="#").SIC-menu__subaccordion Lorem ipsum dolor sit amet
+														a(href="#").SIC-menu__subaccordion Consectetur adipiscing elit
+								li
+									a(href='#') Histórico documento de cobro.
+								li
+									a(href='#') Partidas precio público
+								li
+									a(href='#') Plan de pagos
+								li
+									a(href='#') Cobros/Pagos en ventanilla
+								li
+									a(href='#') Ordenar reenvío a Entidad financiera
+								li
+									a(href='#') Selec individal gestiones apremio.
+								li.SIC-menu__dropdown-submenu(data-ng-click="head.clicked($event)")
+									a(href='#') Operaciones Varias
+									.SIC-menu__dropdown-menu.fc-dropdown-menu.parent(data-ng-click="head.stopPro($event)")
+										.SIC-menu__header
+											.SIC-menu__header-left
+												h3.SIC-menu__title DEUDA CLIENTE
+										ul
+											li
+												uib-accordion(close-others='oneAtATime')
+													.SIC-menu__accordion.panel-default(uib-accordion-group='', heading='Cliente', is-open='status.isFirstOpen', is-disabled='status.isFirstDisabled')
+														a(href="#").SIC-menu__subaccordion Lorem ipsum dolor sit amet
+														a(href="#").SIC-menu__subaccordion Consectetur adipiscing elit
+								li
+									a(href='#') Consulta de Mandatos
+								li
+									a(href='#') Información cuentas bancarias
+								li
+									a(href='#') Cobros
+					li.SIC-menu__dropdown-submenu(data-ng-click="head.clicked($event)")
+						a(href='#') Contratación
+						.SIC-menu__dropdown-menu.fc-dropdown-menu(data-ng-click="head.stopPro($event)")
+							.SIC-menu__header
+								.SIC-menu__header-left
+									h3.SIC-menu__title COBRO
+							ul
+								li
+									a(tabindex='-1', href='#') Deuda contrato
+					li.SIC-menu__dropdown-submenu(data-ng-click="head.clicked($event)")
+						a(href='#') Facturación
+						.SIC-menu__dropdown-menu.fc-dropdown-menu(data-ng-click="head.stopPro($event)")
+							.SIC-menu__header
+								.SIC-menu__header-left
+									h3.SIC-menu__title COBRO
+							ul
+								li
+									a(tabindex='-1', href='#') Deuda contrato
+					li.SIC-menu__dropdown-submenu(data-ng-click="head.clicked($event)")
+						a(href='#') Cobro
+						.SIC-menu__dropdown-menu.fc-dropdown-menu(data-ng-click="head.stopPro($event)")
+							.SIC-menu__header
+								.SIC-menu__header-left
+									h3.SIC-menu__title COBRO
+							ul
+								li
+									a(tabindex='-1', href='#') Deuda contrato
+					li.SIC-menu__dropdown-submenu(data-ng-click="head.clicked($event)")
+						a(href='#') Gestión de reclamaciones
+						.SIC-menu__dropdown-menu.fc-dropdown-menu(data-ng-click="head.stopPro($event)")
+							.SIC-menu__header
+								.SIC-menu__header-left
+									h3.SIC-menu__title COBRO
+							ul
+								li
+									a(tabindex='-1', href='#') Deuda contrato
+					li.SIC-menu__dropdown-submenu(data-ng-click="head.clicked($event)")
+						a(href='#') Autolecturas
+						.SIC-menu__dropdown-menu.fc-dropdown-menu(data-ng-click="head.stopPro($event)")
+							.SIC-menu__header
+								.SIC-menu__header-left
+									h3.SIC-menu__title COBRO
+							ul
+								li
+									a(tabindex='-1', href='#') Deuda contrato
+					li.SIC-menu__dropdown-submenu(data-ng-click="head.clicked($event)")
+						a(href='#') Campañas
+						.SIC-menu__dropdown-menu.fc-dropdown-menu(data-ng-click="head.stopPro($event)")
+							.SIC-menu__header
+								.SIC-menu__header-left
+									h3.SIC-menu__title COBRO
+							ul
+								li
+									a(tabindex='-1', href='#') Deuda contrato
+					li
+						a(href='#') Ventas masivo
+					li
+						a(href='#') Plan de puntos
+					li.SIC-menu__dropdown-submenu(data-ng-click="head.clicked($event)")
+						a(href='#') Mantenimiento gestión documental
+						.SIC-menu__dropdown-menu.fc-dropdown-menu(data-ng-click="head.stopPro($event)")
+							.SIC-menu__header
+								.SIC-menu__header-left
+									h3.SIC-menu__title COBRO
+							ul
+								li
+									a(tabindex='-1', href='#') Deuda contrato
+					li.SIC-menu__dropdown-submenu(data-ng-click="head.clicked($event)")
+						a(href='#') Relación entre agentes
+						.SIC-menu__dropdown-menu.fc-dropdown-menu(data-ng-click="head.stopPro($event)")
+							.SIC-menu__header
+								.SIC-menu__header-left
+									h3.SIC-menu__title COBRO
+							ul
+								li
+									a(tabindex='-1', href='#') Deuda contrato
+					li.SIC-menu__dropdown-submenu(data-ng-click="head.clicked($event)")
+						a(href='#') Relación con proveedores
+						.SIC-menu__dropdown-menu.fc-dropdown-menu(data-ng-click="head.stopPro($event)")
+							.SIC-menu__header
+								.SIC-menu__header-left
+									h3.SIC-menu__title COBRO
+							ul
+								li
+									a(tabindex='-1', href='#') Deuda contrato
+					li.SIC-menu__dropdown-submenu(data-ng-click="head.clicked($event)")
+						a(href='#') M. Liberalizado
+						.SIC-menu__dropdown-menu.fc-dropdown-menu(data-ng-click="head.stopPro($event)")
+							.SIC-menu__header
+								.SIC-menu__header-left
+									h3.SIC-menu__title COBRO
+							ul
+								li
+									a(tabindex='-1', href='#') Deuda contrato
+					li.SIC-menu__dropdown-submenu(data-ng-click="head.clicked($event)")
+						a(href='#') Acceso RPS
+						.SIC-menu__dropdown-menu.fc-dropdown-menu(data-ng-click="head.stopPro($event)")
+							.SIC-menu__header
+								.SIC-menu__header-left
+									h3.SIC-menu__title COBRO
+							ul
+								li
+									a(tabindex='-1', href='#') Deuda contrato
+					li.SIC-menu__dropdown-submenu(data-ng-click="head.clicked($event)")
+						a(href='#') Interacciones de cliente
+						.SIC-menu__dropdown-menu.fc-dropdown-menu(data-ng-click="head.stopPro($event)")
+							.SIC-menu__header
+								.SIC-menu__header-left
+									h3.SIC-menu__title COBRO
+							ul
+								li
+									a(tabindex='-1', href='#') Deuda contrato

@@ -1,0 +1,95 @@
+/*-------------------------------------------------------------
+    #BUTTONS
+-----------------------------------------------------------------*/
+
+@if $include__buttons == true {
+
+
+	$buttons__border	    	:	1							!default;
+	$buttons__border-style		:	solid						!default;
+	$buttons__border-color		:	secondary				 	!default;
+	$buttons__border-radius		:	3							!default;
+	$buttons__line-height		:	$wefront__base-line-height 	!default;
+	$buttons__font-size			:	$wefront__base-font-size	!default;
+	$buttons__base-padding		:	1							!default;
+	$buttons__base-margin		:	1							!default;
+	$buttons__hover-transition	:	.3s							!default;
+	$buttons__color 			: 	white						!default;
+	$buttons__color--hover		: 	black		  				!default;
+
+
+
+
+
+	.o-btn,
+	%btn {
+		display   			: 	inline-block;
+		line-height 		: 	$buttons__line-height * 2;
+		color 				: 	color($buttons__color);
+		text-align 			: 	center;
+		vertical-align      : 	middle;
+		font-size 			: 	rem($buttons__font-size);
+		white-space 		: 	nowrap;
+		background-color 	:	color(secondary);
+		border 				: 	$buttons__border +px $buttons__border-style color($buttons__border-color);
+		border-bottom 		:   ($buttons__border * 2)+px $buttons__border-style color($buttons__border-color);
+		cursor 				: 	pointer;
+		margin-top 			:	rem($buttons__base-margin*5);
+		margin-bottom		:	rem($buttons__base-margin*2);
+		margin-right		:	rem($buttons__base-margin*5);
+		margin-left 		:	rem($buttons__base-margin*0);
+		padding-top 		:   rem($buttons__base-padding*5);
+		padding-bottom 		:	rem($buttons__base-padding*5);
+		padding-right 		:	rem($buttons__base-padding*10);
+		padding-left 		:   rem($buttons__base-padding*10);
+		border-radius 		: 	rem($buttons__border-radius);
+		transition 			:	all $buttons__hover-transition ease-in;
+
+		/**
+         * Nadie quiere un botón con texto subrayado cuando
+         * hacemos hover.
+         */
+
+		&:hover {
+			text-decoration: none;
+			color: color($buttons__color--hover);
+		}
+		&:active,
+		&:focus{
+			outline:none;
+			color: color($buttons__color--hover);
+		}
+		&:visited {
+			color: color($buttons__color--hover);
+		}
+	}
+
+	/*------------------------------------*\
+        #BOTONES-VARIANTES
+    \*------------------------------------*/
+	/**
+     * Variantes de los botones: color para dar sensaciones.
+     *
+     */
+
+
+	/**
+    * Inputs con estilo de botones
+    */
+	input[type="submit"].btn:hover {
+		border-color: color($buttons__border-color);
+	}
+
+
+	/**
+    * Botón no disponible
+    */
+	.o-btn--disabled {
+		@extend %btn;
+		opacity 			:	.5;
+		cursor 				: 	not-allowed;
+		background-color 	: 	grey;
+	}
+
+
+} // END IF

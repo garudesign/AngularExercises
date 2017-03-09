@@ -1,0 +1,171 @@
+<!DOCTYPE html><!--[if gte IE 9]><html lang="es" dir="ltr" class="ie9"><![endif]-->
+<!--[if !IE]><!--><html lang="es" dir="ltr"><!--<![endif]-->
+<head>
+  <!-- Título página-->
+  <title>Ejercicios y componentes AngularJS</title>
+  <!-- Etiquetas META-->
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/><!-- build:css css/style.min.css -->
+  <!-- Archivos CSS-->
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="bower_components/slick-carousel/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="css/dFront.css"/>
+  <!-- Fin archivos CSS--><!-- endbuild -->
+  <!-- Fin CSS Y SCRIPT compatibilidad IE--><!-- build:js js/main.min.js -->
+  <!-- Archivos JS-->
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="bower_components/html5shiv/dist/html5shiv.min.js"></script>
+  <script type="text/javascript" src="bower_components/respond/dest/respond.min.js"></script>
+  <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
+  <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  <script type="text/javascript" src="bower_components/slick-carousel/slick/slick.min.js"></script>
+  <script type="text/javascript" src="bower_components/angular-slick/dist/slick.min.js"></script>
+  <script type="text/javascript" src="js/dev/app.js"></script>
+  <!-- Fin rchivos JS--><!-- endbuild -->
+</head>
+<body data-ng-app="dFrontApp" data-ng-class="colorBody">
+  <div class="wrapper">
+    <div data-ng-controller="checkCtrl" class="mgt-plus-2">
+      <div data-ng-repeat="color in arrlist">
+        <label>
+          <input type="checkbox" value="color.ckid" ng-model="color.checked" data-ng-click="colorChange($index, arrlist)">{{color.label}}
+        </label>
+      </div>
+    </div>
+    <h1 data-ng-controller="appCtrl" data-ng-bind="titlepage"></h1>
+    <button type="button" name="btn-title" data-ng-click="titleChange()" data-ng-controller="containerCtrl">Cambiar titulo y background</button>
+    <div data-ng-controller="tablaCtrl">
+      <div class="mgt-plus-2">
+        <label for="search">Filtrar</label>
+        <input type="text" id="search" name="search" data-ng-model="searchKeyword.name" placeholder="Nombre del empleado">
+      </div>
+      <div class="mgt-plus-2">
+        <div><span>Filtrar por categor&iacute;a</span></div>
+        <input type="radio" id="rd-01" name="rd-category" value="CAL" data-ng-model="searchCategory.category">
+        <label for="rd-01">CAL</label>
+        <input type="radio" id="rd-02" name="rd-category" value="CT" data-ng-model="searchCategory.category">
+        <label for="rd-02">CT</label>
+        <input type="radio" id="rd-03" name="rd-category" value="CTJ" data-ng-model="searchCategory.category">
+        <label for="rd-03">CTJ</label>
+      </div>
+      <div class="mgt-plus-2">
+        <div><span>Filtrar por categor&iacute;a</span></div>
+        <input type="checkbox" id="ck-01" value="cal" data-ng-click="includeCategory('CAL')">
+        <label for="ck-01">CAL</label>
+        <input type="checkbox" id="ck-02" value="ct" data-ng-click="includeCategory('CT')">
+        <label for="ck-02">CT</label>
+        <input type="checkbox" id="ck-03" value="ctj" data-ng-click="includeCategory('CTJ')">
+        <label for="ck-03">CTJ</label>
+      </div>
+      <div class="mgt-plus-2">
+        <label for="sl-num">N&uacute;mero empleado</label>
+        <select id="sl-num" data-ng-options="item as item.id for item in datatable.item track by item.id" data-ng-model="selection">
+          <option value>Seleccionar empledo</option>
+        </select>
+      </div>
+      <div class="mgt-plus-2">
+        <table class="df-table">
+          <caption data-ng-bind="datatable.caption" class="df-table__heading"></caption>
+          <thead>
+            <tr class="df-table__row df-table__row--head">
+              <th data-ng-repeat="head in datatable.header" class="df-table__cell">{{head.name}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-ng-repeat="item in datatable.item | filter: searchKeyword | filter: searchCategory:true | filter: categoryKey | filter: selection||undefined" class="df-table__row">
+              <td class="df-table__cell">{{item.name}}</td>
+              <td class="df-table__cell">{{item.id}}</td>
+              <td class="df-table__cell">{{item.category}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mgt-plus-2">
+        <table-employer caption="datatable.caption" header="datatable.header" employer="datatable.item"></table-employer>
+      </div>
+      <div class="mgt-plus-2">
+        <form name="frmemployer" data-ng-controller="formEmployerCtrl" novalidate>
+          <fieldset>
+            <legend class="mgb-plus-2">Formulario alta empleado</legend>
+            <div class="row">
+              <div class="col-md-1">
+                <label for="fr-name">Nombre</label>
+              </div>
+              <div class="col-md-4">
+                <input type="text" id="fr-name" name="fr-name" placeholder="Nombre" data-ng-model="dataform.frmName" required class="mgb-plus-2">
+              </div>
+              <div class="col-md-4">{{dataform.frmName}}</div>
+            </div>
+            <div class="row">
+              <div class="col-md-1">
+                <label for="fr-subname">Apellidos</label>
+              </div>
+              <div class="col-md-4">
+                <input type="text" id="fr-subname" name="fr-subname" placeholder="Apellidos" data-ng-model="dataform.frmSubname" required class="mgb-plus-2">
+              </div>
+              <div class="col-md-4">{{dataform.frmSubname}}</div>
+            </div>
+            <div class="row">
+              <div class="col-md-1">
+                <label for="fr-idempl">Email</label>
+              </div>
+              <div class="col-md-4">
+                <input type="email" id="fr-email" name="fr-email" placeholder="Email" data-ng-model="dataform.frmEmail" required class="mgb-plus-2">
+              </div>
+              <div class="col-md-4">{{dataform.frmEmail}}</div>
+            </div>
+            <div class="row">
+              <div class="col-md-1">
+                <label for="fr-idempl">N&uacute;mero Empleado</label>
+              </div>
+              <div class="col-md-4">
+                <input type="text" id="fr-idempl" name="fr-idempl" placeholder="Número empleado" data-ng-model="dataform.frmNum" required class="mgb-plus-2">
+              </div>
+              <div class="col-md-4">{{dataform.frmNum}}</div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="u-text-right">
+                  <input type="submit" value="Enviar" data-ng-disabled="frmemployer.$invalid" data-ng-click="send()">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="mgt-plus-2 mgb-plus-2">
+                  <div uib-alert ng-class="'alert-danger'" data-ng-if="frmemployer.$invalid">Datos incorrectos
+                  </div>
+                  <div uib-alert ng-class="'alert-success'" data-ng-bind="frmSend" data-ng-if="frmemployer.$valid"></div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+      <div class="mgb-plus-2">
+        <slick infinite="true" slides-to-show="3" slides-to-scroll="3">
+          <div>
+            <figure><img src="assets/img/contents/slider-01.png" alt="Slider 1"></figure>
+          </div>
+          <div>
+            <figure><img src="assets/img/contents/slider-02.png" alt="Slider 2"></figure>
+          </div>
+          <div>
+            <figure><img src="assets/img/contents/slider-03.png" alt="Slider 3"></figure>
+          </div>
+          <div>
+            <figure><img src="assets/img/contents/slider-04.png" alt="Slider 4"></figure>
+          </div>
+          <div>
+            <figure><img src="assets/img/contents/slider-05.png" alt="Slider 5"></figure>
+          </div>
+          <div>
+            <figure><img src="assets/img/contents/slider-06.png" alt="Slider 6"></figure>
+          </div>
+        </slick>
+      </div>
+    </div>
+  </div>
+</body></html>

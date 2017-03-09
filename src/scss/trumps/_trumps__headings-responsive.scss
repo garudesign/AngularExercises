@@ -1,0 +1,98 @@
+/*------------------------------------*\
+	#HEADINGS-RESPONSIVE
+\*------------------------------------*/
+
+/**
+ * Based on _trumps.headings, this will generate resonsive equivalents of the
+ * headings which change their font-size depending on the media-queries
+ * set in _settings.responsive.
+ */
+
+// Here we set a variable assuming that headings responsive are not set
+// globally. If they have been previously been defined, the following variable
+// will be overriden and will be set to `true`.
+$inuit-enable-headings--responsive--alpha: false !default;
+$inuit-enable-headings--responsive--beta: false !default;
+$inuit-enable-headings--responsive--gamma: false !default;
+$inuit-enable-headings--responsive--delta: false !default;
+$inuit-enable-headings--responsive--epsilon: false !default;
+$inuit-enable-headings--responsive--zeta: false !default;
+
+@each $breakpoint in $breakpoints {
+
+	$alias: nth($breakpoint, 1);
+
+	@include media-query($alias) {
+
+		@if ($inuit-enable-headings--responsive--alpha == true) {
+
+			/**
+			 * Responsive alpha #{$alias}
+			 */
+			.#{$inuit-namespace}u-alpha-#{$alias} {
+				@include inuit-font-size($inuit-heading-size-1);
+			}
+
+		}
+
+		@if ($inuit-enable-headings--responsive--beta == true) {
+
+			/**
+			 * Responsive beta #{$alias}
+			 */
+			.#{$inuit-namespace}u-beta-#{$alias} {
+				@include inuit-font-size($inuit-heading-size-2);
+			}
+
+		}
+
+		@if ($inuit-enable-headings--responsive--gamma == true) {
+
+			/**
+			 * Responsive gamma #{$alias}
+			 */
+			.#{$inuit-namespace}u-gamma-#{$alias} {
+				@include inuit-font-size($inuit-heading-size-3);
+			}
+
+		}
+
+		@if ($inuit-enable-headings--responsive--delta == true) {
+
+			/**
+			 * Responsive delta #{$alias}
+			 */
+			.#{$inuit-namespace}u-delta-#{$alias} {
+				@include inuit-font-size($inuit-heading-size-4);
+			}
+
+		}
+
+		@if ($inuit-enable-headings--responsive--epsilon == true) {
+
+			/**
+			 * Responsive epsilon #{$alias}
+			 */
+			.#{$inuit-namespace}u-epsilon-#{$alias} {
+				@include inuit-font-size($inuit-heading-size-5);
+			}
+
+		}
+
+		@if ($inuit-enable-headings--responsive--zeta == true) {
+
+			/**
+			 * Responsive zeta #{$alias}
+			 */
+			.#{$inuit-namespace}u-zeta-#{$alias} {
+				@include inuit-font-size($inuit-heading-size-6);
+			}
+
+		}
+
+	}
+	// Close media query.
+
+}
+
+// Close breakpoints loop.

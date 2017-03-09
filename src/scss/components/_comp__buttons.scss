@@ -1,0 +1,26 @@
+/*-------------------------------------------------------------
+    #BUTTONS CUSTOM
+-----------------------------------------------------------------*/
+$include__buttons 			: true ;
+
+$buttons__border	    	:	6							;
+$buttons__border-style		:	solid						;
+$buttons__border-color		:	secondary		 			;
+$buttons__border-radius		:	5							;
+$buttons__line-height		:	$wefront__base-line-height 	;
+$buttons__font-size			:	$wefront__base-font-size	;
+$buttons__base-padding		:	1							;
+$buttons__base-margin		:	2							;
+$buttons__hover-transition	:	.3s							;
+$buttons__color 			: 	white						;
+$buttons__color--hover		: 	black		  				;
+
+
+@import "../objects/_objects__buttons.scss";
+
+
+.c-buttons{
+	@extend %btn;
+}
+
+

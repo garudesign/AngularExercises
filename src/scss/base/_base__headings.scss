@@ -1,0 +1,25 @@
+/*----------------------------------------------------------------
+    #HEADINGS
+------------------------------------------------------------------*/
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin 			: 0;
+	font-family 	: $wefront__base-font-family;
+	font-weight 	: normal;
+	color 			: $wefront__base-color;
+	text-rendering 	: optimizelegibility;
+	line-height  	: $wefront__base-line-height *2 ;
+}
+
+h1	{ font-size: rem($wefront-heading-size-1) }
+h2	{ font-size: rem($wefront-heading-size-2) }
+h3	{ font-size: rem($wefront-heading-size-3) }
+h4	{ font-size: rem($wefront-heading-size-4) }
+h5	{ font-size: rem($wefront-heading-size-5) }
+h6	{ font-size: rem($wefront-heading-size-6) }

@@ -1,0 +1,120 @@
+extends ../layouts/layout__primary
+
+
+block title
+	title!='Ejercicios y componentes AngularJS'
+
+block body
+	.wrapper
+		.mgt-plus-2(data-ng-controller="checkCtrl")
+			div(data-ng-repeat="color in arrlist")
+				label
+					input(type="checkbox" value="color.ckid" ng-model="color.checked" data-ng-click="colorChange($index, arrlist)")
+					{{color.label}}
+		h1(data-ng-controller="appCtrl" data-ng-bind="titlepage")
+		button(type="button" name="btn-title" data-ng-click="titleChange()" data-ng-controller="containerCtrl")!="Cambiar titulo y background"
+		div(data-ng-controller="tablaCtrl")
+			.mgt-plus-2
+				label(for="search")!="Filtrar"
+				input(type="text" id="search" name="search" data-ng-model="searchKeyword.name" placeholder="Nombre del empleado")
+			.mgt-plus-2
+				div
+					span!="Filtrar por categor&iacute;a"
+				input(type="radio" id="rd-01" name="rd-category" value="CAL" data-ng-model="searchCategory.category")
+				label(for="rd-01")!="CAL"
+				input(type="radio" id="rd-02" name="rd-category" value="CT" data-ng-model="searchCategory.category")
+				label(for="rd-02")!="CT"
+				input(type="radio" id="rd-03" name="rd-category" value="CTJ" data-ng-model="searchCategory.category")
+				label(for="rd-03")!="CTJ"
+			.mgt-plus-2
+				div
+					span!="Filtrar por categor&iacute;a"
+				input(type="checkbox" id="ck-01" value='cal' data-ng-click="includeCategory('CAL')")
+				label(for="ck-01")!="CAL"
+				input(type="checkbox" id="ck-02" value='ct' data-ng-click="includeCategory('CT')")
+				label(for="ck-02")!="CT"
+				input(type="checkbox" id="ck-03" value='ctj' data-ng-click="includeCategory('CTJ')")
+				label(for="ck-03")!="CTJ"
+			.mgt-plus-2
+				label(for="sl-num")!="N&uacute;mero empleado"
+				select(id="sl-num" data-ng-options="item as item.id for item in datatable.item track by item.id" data-ng-model="selection")
+					option(value)!="Seleccionar empledo"
+			.mgt-plus-2
+				table.df-table
+					caption.df-table__heading(data-ng-bind="datatable.caption")
+					thead
+						tr.df-table__row.df-table__row--head
+							th.df-table__cell(data-ng-repeat="head in datatable.header")
+								{{head.name}}
+					tbody
+						tr.df-table__row(data-ng-repeat="item in datatable.item | filter: searchKeyword | filter: searchCategory:true | filter: categoryKey | filter: selection||undefined")
+							td.df-table__cell
+								{{item.name}}
+							td.df-table__cell
+								{{item.id}}
+							td.df-table__cell
+								{{item.category}}
+			.mgt-plus-2
+				table-employer(caption="datatable.caption" header="datatable.header" employer="datatable.item")
+			.mgt-plus-2
+				form(name="frmemployer" data-ng-controller="formEmployerCtrl" novalidate)
+					fieldset
+						legend.mgb-plus-2!="Formulario alta empleado"
+						.row
+							.col-md-1
+								label(for="fr-name")!="Nombre"
+							.col-md-4
+								input.mgb-plus-2(type="text" id="fr-name" name="fr-name" placeholder="Nombre" data-ng-model="dataform.frmName" required)
+							.col-md-4
+								{{dataform.frmName}}
+						.row
+							.col-md-1
+								label(for="fr-subname")!="Apellidos"
+							.col-md-4
+								input.mgb-plus-2(type="text" id="fr-subname" name="fr-subname" placeholder="Apellidos" data-ng-model="dataform.frmSubname" required)
+							.col-md-4
+								{{dataform.frmSubname}}
+						.row
+							.col-md-1
+								label(for="fr-idempl")!="Email"
+							.col-md-4
+								input.mgb-plus-2(type="email" id="fr-email" name="fr-email" placeholder="Email" data-ng-model="dataform.frmEmail" required)
+							.col-md-4
+								{{dataform.frmEmail}}
+						.row
+							.col-md-1
+								label(for="fr-idempl")!="N&uacute;mero Empleado"
+							.col-md-4
+								input.mgb-plus-2(type="text" id="fr-idempl" name="fr-idempl" placeholder="Número empleado" data-ng-model="dataform.frmNum" required)
+							.col-md-4
+								{{dataform.frmNum}}
+						.row
+							.col-md-4
+								.u-text-right
+									input(type="submit" value="Enviar" data-ng-disabled="frmemployer.$invalid" data-ng-click="send()")
+						.row
+							.col-md-4
+								.mgt-plus-2.mgb-plus-2
+									div(uib-alert ng-class="'alert-danger'" data-ng-if="frmemployer.$invalid")
+										!="Datos incorrectos"
+									div(uib-alert ng-class="'alert-success'" data-ng-bind="frmSend" data-ng-if="frmemployer.$valid")
+			.mgb-plus-2
+				slick(infinite="true" slides-to-show="3" slides-to-scroll="3")
+					div
+						figure
+							img(src="#{globals.imgPath}contents/slider-01.png" alt="Slider 1")
+					div
+						figure
+							img(src="#{globals.imgPath}contents/slider-02.png" alt="Slider 2")
+					div
+						figure
+							img(src="#{globals.imgPath}contents/slider-03.png" alt="Slider 3")
+					div
+						figure
+							img(src="#{globals.imgPath}contents/slider-04.png" alt="Slider 4")
+					div
+						figure
+							img(src="#{globals.imgPath}contents/slider-05.png" alt="Slider 5")
+					div
+						figure
+							img(src="#{globals.imgPath}contents/slider-06.png" alt="Slider 6")

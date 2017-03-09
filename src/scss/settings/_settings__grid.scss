@@ -1,0 +1,48 @@
+/*------------------------------------------------------------
+    #CONFIG GRID
+-------------------------------------------------------------*/
+
+$margin-row	: 	$wefront__margin-row;
+
+$xl-cols	:	$wefront__col-num-xl;
+$lg-cols	: 	$wefront__col-num-lg;
+$md-cols	: 	$wefront__col-num-md;
+$sm-cols	: 	$wefront__col-num-sm;
+$xs-cols	: 	$wefront__col-num-xs;
+
+
+$xl-min		: 	$wefront__max-large	;
+$lg-min		: 	$wefront__large		;
+$md-min		: 	$wefront__medium	;
+$sm-min		: 	$wefront__small		;
+$xs-min		: 	$wefront__x-small	;
+
+
+$xl-gutter	: 	$wefront__gutter-xl;
+$lg-gutter	: 	$wefront__gutter-lg;
+$md-gutter	: 	$wefront__gutter-md;
+$sm-gutter	: 	$wefront__gutter-sm;
+$xs-gutter	: 	$wefront__gutter-sx;
+
+
+$col-prefix				:	"col";
+$hide-prefix			: 	"hide";
+$visible-prefix			: 	"visible";
+$inline-visible-prefix	: 	"inline-visible";
+$offset-prefix			:	"offset";
+$pull-prefix			:	"pull";
+$push-prefix			:	"push";
+$clear-prefix			:	"clear";
+$left-prefix			:	"left";
+$right-prefix			:	"right";
+$both-prefix			:	"all";
+$cancel-gutter-prefix	:	"noGutter";
+$end-prefix				:	"end";
+$xl-col-prefix			:	"xl";
+$lg-col-prefix			:	"lg";
+$md-col-prefix			:	"md";
+$sm-col-prefix			:	"sm";
+$xs-col-prefix			:	"xs";
+
+
+

@@ -1,0 +1,36 @@
+//- jade mixin includes
+//- general
+include ../config.jade
+include ../utilities/_util__headBuilder
+//- modules
+
+doctype html
+<!--[if gte IE 9]><html lang="es" dir="ltr" class="ie9"><![endif]-->
+<!--[if !IE]><!--><html lang="es" dir="ltr"><!--<![endif]-->
++m-headBuilder({
+	title: 'WeFront - Framework - Template',
+	metaList: {
+		'viewport': 'width=device-width, initial-scale=1.0'
+	},
+	cssFiles: [
+		'bower_components/bootstrap/dist/css/bootstrap.min',
+		'bower_components/slick-carousel/slick/slick',
+		'css/dFront'
+	],
+	jsFiles: [
+		'bower_components/jquery/dist/jquery.min',
+		'bower_components/html5shiv/dist/html5shiv.min',
+		'bower_components/respond/dest/respond.min',
+		'bower_components/angular/angular',
+		'bower_components/angular-animate/angular-animate.min',
+		'bower_components/bootstrap/dist/js/bootstrap.min',
+		'bower_components/angular-bootstrap/ui-bootstrap-tpls.min',
+		'bower_components/slick-carousel/slick/slick.min',
+		'bower_components/angular-slick/dist/slick.min',
+		'js/dev/app'
+	]
+})
+body(data-ng-app="dFrontApp" data-ng-class="colorBody")
+	block body
+//- DON'T REMOVE: This tag close HTML tag to make compatible conditional comments
+</html>

@@ -1,0 +1,9 @@
+{
+	"name": "app name",
+	"dependencies": {},
+	"devDependencies": {},
+	"globalDependencies": {
+		"angular": "registry:dt/angular#1.5.0+20160819155010",
+		"jquery": "registry:dt/jquery#1.10.0+20160704162008"
+	}
+}

@@ -1,0 +1,14 @@
+{
+  "name": "shim",
+  "main": "./all.js",
+  "homepage": "https://github.com/cujojs/shim",
+  "_release": "c19256b0db",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "c19256b0db3e33647c836ca31e34ed441a8e277e"
+  },
+  "_source": "https://github.com/cujojs/shim.git",
+  "_target": "*",
+  "_originalSource": "shim"
+}

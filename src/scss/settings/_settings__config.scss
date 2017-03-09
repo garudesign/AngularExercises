@@ -1,0 +1,83 @@
+///*-------------------------------------------------------------------------
+//   #SETTINGS CONFIG
+//--------------------------------------------------------------------------*/
+
+//	CONTENT THIS FILE:
+//		# NAMESPACE
+//		# BASIC VALUE FOR PROJECT
+//		# INCLUDE OBJECTS
+//		# CONFIG - GRID - FLOAT
+
+
+
+
+
+///*-------------------------------------------------------------------------
+//   	# NAMESPACE
+//--------------------------------------------------------------------------*/
+
+$wefront__namespace				: wf- !default;
+
+
+
+
+
+///*-------------------------------------------------------------------------
+//   	# BASIC VALUE FOR PROJECT
+//--------------------------------------------------------------------------*/
+
+$wefront__base-font-size		: 	13   		;
+$wefront__base-line-height		: 	100% 		;
+$wefront__base-background-color : 	white		;
+$wefront__base-color 			: 	secondary	;
+$wefront__base-font-family		: 	'opensans'	;
+$wefront__width-wrapper			: 	1024		;
+$wefront__base-typography-color	: 	gray-90		;
+$wefront__base-spacing			:	30			;
+$wefront__fontPath				: 	"../assets/fonts/";
+
+
+
+
+
+///*-------------------------------------------------------------------------
+//   	# INCLUDE OBJECTS
+//--------------------------------------------------------------------------*/
+
+$include__buttons 				: false !default;
+$include__grid--float 			: true !default;
+
+
+
+
+
+///*-----------------------------------------------------
+///		# CONFIG - GRID - FLOAT
+///-----------------------------------------------------*/
+
+$wefront__responsive--config	: true;
+
+$wefront__wrapper-fluid	: 	false;
+
+$wefront__x-small		: 	320 ;
+$wefront__small			: 	480 ;
+$wefront__medium    	: 	768 ;
+$wefront__large			: 	1024;
+$wefront__max-large 	: 	1280;
+
+$wefront__margin-row	: 	true;
+
+$wefront__col-num-xl	:	12;
+$wefront__col-num-lg	:	12;
+$wefront__col-num-md	:	12;
+$wefront__col-num-sm	:	12;
+$wefront__col-num-xs	:	12;
+
+$wefront__gutter-xl		: 	$wefront__base-spacing;
+$wefront__gutter-lg		:	$wefront__base-spacing;
+$wefront__gutter-md		: 	$wefront__base-spacing;
+$wefront__gutter-sm		:	$wefront__base-spacing;
+$wefront__gutter-sx		:	$wefront__base-spacing;
+///*-----------------------------------------------------
+///		# END - CONFIG - GRID - FLOAT
+///-----------------------------------------------------*/

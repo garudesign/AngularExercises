@@ -1,0 +1,16 @@
+/*------------------------------------
+    #HTML
+------------------------------------*/
+
+html {
+	font-size 					: $wefront__base-font-size + px;
+	line-height 				: $wefront__base-line-height ;
+	background-color 			: color($wefront__base-background-color);
+	color 						: color($wefront__base-color);
+	overflow-y  				: scroll;
+	min-height 					: 100%;
+	-webkit-text-size-adjust 	: 100%;
+	-ms-text-size-adjust 		: 100%;
+	font-family 				: $wefront__base-font-family;
+	position  					: relative;
+}

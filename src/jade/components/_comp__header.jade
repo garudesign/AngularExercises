@@ -1,0 +1,23 @@
+include _comp__menu
+
+mixin header()
+	header.main-header(data-ng-controller="app.controllers.MenuInstanceCtrl as head")
+		+menu()
+		.main-header__top
+			.wrapper
+				.row
+					.main-header__left.col-xs-4
+						button.SIC-btn-icon.SIC-btn-icon--first-item.SIC-btn-icon--menu(data-ng-click="head.menuOpen = true")
+						h4.main-header__title Bienvenido
+					.main-header__center.col-xs-4
+						a(href="/no-link", title="Ir a la home")
+							img(src=globals.imgPath + "contents/logo.png", alt="logotipo")
+					.main-header__right.col-xs-4
+						button.SIC-btn-icon.SIC-btn-icon--app(data-tooltip-placement="bottom-right" , data-uib-tooltip-template="'launcher.tpl.html'", data-tooltip-trigger="{outsideClick: outsideClick}")
+						button.SIC-btn-icon.SIC-btn-icon--questions
+						button.SIC-btn-icon.SIC-btn-icon--exit
+		.main-header__sub
+			.wrapper
+				.row
+					.col-xs-12
+						span.main-header__sub-title Inicio

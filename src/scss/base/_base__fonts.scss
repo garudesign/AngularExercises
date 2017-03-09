@@ -1,0 +1,35 @@
+/*-------------------------------------------
+	#FONT GENERATOR
+---------------------------------------------*/
+
+///* Example for use @font-face
+//
+//	@include font-face([name-font],
+//		"[path]",
+//		[font-style],
+//		[font-weight],
+//		[type-font(eot | woff | svg | ttf)]
+//	);
+//
+//*/
+
+
+/*-------------------------------------------
+	#OPENSANS -REGULAR
+---------------------------------------------*/
+@include font-face(opensans,
+	$wefront__font-path	+ "open-sans/opensans-regular",
+	normal,
+	normal,
+	eot woff svg ttf
+);
+
+/*-------------------------------------------
+	#OPENSANS -REGULAR
+---------------------------------------------*/
+@include font-face(opensans--italic,
+	$wefront__font-path	+ "open-sans/opensans-italic",
+	normal,
+	normal,
+	eot woff svg ttf
+);

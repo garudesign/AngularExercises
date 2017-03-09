@@ -1,0 +1,25 @@
+/*------------------------------------
+    #TABLES
+-------------------------------------*/
+
+.df-table{
+    width: 100%;
+    border-bottom: 1px solid color(gray-90);
+    &__heading{
+        padding: rem(5);
+        background: color(gray-90);
+    }
+    &__row{
+        &--head{
+            text-align: left;
+            border-width: 0 1px 1px 1px;
+            border-color: color(gray-90);
+            border-style: solid;
+        }
+    }
+    &__cell{
+        padding: rem(5);
+        box-sizing: border-box;        
+    }
+}
+ 

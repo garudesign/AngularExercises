@@ -1,0 +1,33 @@
+/*------------------------------------*\
+    #HIDE
+\*------------------------------------*/
+
+/**
+ * Hide elements on certain breakpoints based on your responsive settings.
+ */
+.u-hide {
+	display: none !important;
+}
+.u-hideAccessible{
+	position: absolute;
+	top: -9999em;
+}
+
+// Loop over our breakpoints defined in _settings.responsive.scss
+@each $breakpoint in $breakpoints {
+
+	// Get the name of the breakpoint.
+	$alias: nth($breakpoint, 1);
+
+	@include media-query($alias) {
+
+		.u-hide-#{$alias} {
+			display: none !important;
+		}
+
+	}
+	// Close media query.
+
+}
+
+// Close breakpoints loop.

@@ -1,6 +1,6 @@
 #WEFRONT v.1.0.0
 
-Framework de desarrollo del Centro de excelencia Front de Everis S.L.
+Ejercicios prácticos AngularJS
 
 ## USO
 

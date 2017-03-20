@@ -1,6 +1,6 @@
 #WEFRONT v.1.0.0
 
-Ejercicios prácticos AngularJS
+Ejercicios prácticos de AngularJS
 
 ## USO
 

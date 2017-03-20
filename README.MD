@@ -1,4 +1,4 @@
-#WEFRONT v.1.0.0
+#ANGULAREXERCISES
 
 Ejercicios prácticos de AngularJS
 
